@@ -10,12 +10,3 @@
 # 4.	For the driver of this company, we need to have a detail that must be safe for customer which is Driver name, Driver number, Driver address, Driver emergency number and the important things, Driver license.
 
 # 5.	The trip that customer plan and reserve in this application. 
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<body>
