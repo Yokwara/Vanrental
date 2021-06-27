@@ -1,4 +1,8 @@
 # Vanrental
+| Customer        | Rental        |
+| -------------   | ------------- |
+| Customer_name   | aaaaaaaa      |
+| Content_number  | bbbbbbbb      |
 # 1.	This company is about a Van rental in Bangkok that customer can rent for a trip by trip. For an example is Pattaya trip is 3 days 2 night. We will follow by both of driver and van going to a trip with your crew until the end of trip and a price is follows by a price of car petrol per day (1 full capacity engine around 1500 baht) and a van price.
  
 # 2.	Price is separate in to 2 part which are Van price and Van petrol price.
