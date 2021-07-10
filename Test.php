@@ -8,13 +8,33 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Minimal Dropdown Menu </title>
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
 <body>
-The structure of the Vanrental table:
-Rent_number     | int(10)     | NO   | PRI,
-Customer_name   | varchar(20) | NO,
-Customer_number | varchar(20) | NO,
-Van_pricerate   | varchar(20) | YES.
-<br/>
+    <header>
+        <div class="nav">
+            <ul>
+                <li class="home"><a href="Home.html">Home</a></li>
+                <li class="Price"><a href="price.html">Price</a></li>
+                <li class="Reserve"><a href="#">Reserve</a></li>
+            </ul>
+        </div>
+    </header>
+</body>
+</html>
+
+
+
+
+<body>
 <div class="container">
   <form method="POST">
     <div class="form-group">
