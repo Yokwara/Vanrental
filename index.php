@@ -24,7 +24,7 @@
             <ul>
                 <li class="home"><a href="Home.html">Home</a></li>
                 <li class="Price"><a href="price.html">Price</a></li>
-                <li class="Reserve"><a href="#">Reserve</a></li>
+                <li class="Reserve"><a href="reserve.html">Reserve</a></li>
             </ul>
         </div>
     </header>
@@ -32,37 +32,68 @@
 </html>
 
 
-
-
-<body>
-<div class="container">
-  <form method="POST">
-    <div class="form-group">
-      <label for="Rent_number">Rent number</label>
-      <input type="number" required min="1111111" max="9999999" size="7" class="form-control" id="Rent_number" placeholder="Enter number of rent" name="number">
-    </div>
-    <div class="form-group">
-      <label for="Customer_name">Customer name</label>
-      <input type="text" required maxlength="20" class="form-control" id="Customer_name" placeholder="Enter Customer name" name="Customer_name">
-    </div>
-    <div class="form-group">
-      <label for="Customer_number">Customer phone number</label>
-      <input type="number" required min="1111111" max="9999999" size="7" class="form-control" id="Customer_number" placeholder="Enter number" name="number">
-    </div>
-    <div class="form-group">
-      <label for="Van_pricerate">Price rate </label>
-     <input type="text" required maxlength="20" class="form-control" id="Van_pricerate" placeholder="Enter Price rate" name="Van_pricerate">
-    </div>
-    </div>
-
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
+<div class="jumbotron text-center">
+  <h1>Welcome to Vanrental company</h1>
+  <p>This is our reserve application!</p>
 </div>
 
-<?php
-$servername = "127.0.0.1";
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>About us</h3>
+      <p>1. This company is about a Van rental in Bangkok that customer can rent for a trip by trip. For an example is Pattaya trip is 3 days 2 night. We will follow by both of driver and van going to a trip with your crew until the end of trip and a price is follows by a price of car petrol per day (1 full capacity engine around 1500 baht) and a van price.</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>about us</h3>
+      <p>2. The trip that customer plan and reserve in this application.</p>
+    </div> 
+    <div class="col-sm-4">
+      <h3>VAN PRICE RATE</h3>
+      <p>Welcome to Van rental!
+
+        <p> This is our promotion!!&hellip;
+        
+        
+        <p>  Van          >>   1800 baht   for     15     peoples        
+        <p>  Van / NGV    >>   1500 baht   for     12     peoples    
+        <p>  Van / LPG    >>   1500 baht   for     12     peoples
+            </p>
+ 
+    </div>
+  </div>
+</div>
+<body>
+
+  <div class="container">
+    <form method="POST">
+     
+      <div class="form-group">
+        <label for="Customer_name">Customer name</label>
+        <input type="text" required maxlength="20" class="form-control" id="Customer_name" placeholder="Enter Customer name" name="Customer_name">
+      </div>
+      <div class="form-group">
+        <label for="Customer_number">Customer phone number</label>
+        <input type="number" required min="0800000000" max="0999999999" size="7" class="form-control" id="Customer_number" placeholder="Enter number" name="number">
+      </div>
+      <div class="form-group">
+        <label for="Van_pricerate">Price rate </label>
+       <input type="text" required maxlength="20" class="form-control" id="Van_pricerate" placeholder="Enter Price rate" name="Van_pricerate">
+      </div>
+      <div class="form-group">
+        <label for="Trip">How many days you want to rent. </label>
+        <input type="number" required min="1" max="10" size="7" class="form-control" id="Customer_number" placeholder="Enter number" name="number">
+      </div>
+  
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+
+
+
+ <?php
+$servername = "localhost";
 $username = "root";
-$password = "yok2552";
+$password = "root";
 $dbname = "vanrental";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -71,16 +102,16 @@ if ($conn->connect_error){
 }
 echo "Connected Successfully <hr> <br>";
 print_r($_POST);
-if (isset($_POST['rent'])) {
-   $Rent_number = $_POST['Rent_number'];
+if (isset($_POST['Customer_name'])) {
    $Customer_name = $_POST['Customer_name'];
    $Customer_number = $_POST['Customer_number'];
-   $Van_pricerate = $_POST['Van_pricerate'];
-   $sql = "insert into vanrental (Rent_number,Customer_name,Customer_number,Van_pricerate) values (?,?,?,?)";
+   $van_pricerate = $_POST['van_pricerate'];
+   $day_of_trip = $_POST['day_of_trip'];
+   $sql = "insert into reserve (Customer_name, Customer_number, van_pricerate, day_of_trip) values (?,?,?,?)";
    // prepare statement
    $sta = mysqli_prepare($conn, $sql);
    echo $conn->errno;
-   mysqli_stmt_bind_param($sta, 'iss', $Rent_number, $Customer_name, $Customer_number,$Van_pricerate);
+   mysqli_stmt_bind_param($sta, 'iss', $Customer_name, $Customer_number, $van_pricerate, $day_of_trip);
    echo $conn->errno;
    $sta->execute();
 echo $conn->errno;
@@ -91,3 +122,4 @@ mysqli_close($conn);
 
  </body>
  </html>
+
